@@ -31,7 +31,7 @@ namespace Calculadora
         }
         void lockbutton()
         {
-            BtnEqual.Enabled = !(Txt_Result.Text == null || selectedOperation == operations.division && Txt_Result is 0);
+            BtnEqual.Enabled = !(Txt_Result.Text == null || selectedOperation == operations.division && Txt_Result is null);
         }
 
         private void BtnSoma_Click(object sender, EventArgs e)
@@ -91,11 +91,7 @@ namespace Calculadora
                     break;
             }
             Txt_Result.Text = result.ToString();
-        }
-
-        private void NumOper2_ValueChanged(object sender, EventArgs e)
-        {
-            lockbutton();
+            Txt_PreviousOp.Text = value.ToString();
         }
 
         private void Btn_n1_Click(object sender, EventArgs e)
@@ -159,6 +155,20 @@ namespace Calculadora
         private void Btn_Clear_Click(object sender, EventArgs e)
         {
             Txt_Result.Text = "";
+            Txt_PreviousOp.Text = "";
+            result = 0;
+            value = 0;
+        }
+
+        private void Txt_Result_TextChanged(object sender, EventArgs e)
+        {
+            lockbutton();
+        }
+
+        private void Txt_PreviousOp_TextChanged(object sender, EventArgs e)
+        {
+            Txt_PreviousOp.Text += value.ToString();
+            //Txt_PreviousOp.Text += operations;
         }
     }
 }

@@ -232,6 +232,7 @@
             this.Txt_Result.Size = new System.Drawing.Size(251, 54);
             this.Txt_Result.TabIndex = 16;
             this.Txt_Result.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Txt_Result.TextChanged += new System.EventHandler(this.Txt_Result_TextChanged);
             // 
             // Btn_n6
             // 
