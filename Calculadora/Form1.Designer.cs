@@ -98,7 +98,7 @@
             this.Btn_n9.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Btn_n9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_n9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_n9.Location = new System.Drawing.Point(136, 313);
+            this.Btn_n9.Location = new System.Drawing.Point(136, 183);
             this.Btn_n9.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_n9.Name = "Btn_n9";
             this.Btn_n9.Size = new System.Drawing.Size(59, 59);
@@ -112,7 +112,7 @@
             this.Btn_n8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Btn_n8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_n8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_n8.Location = new System.Drawing.Point(72, 313);
+            this.Btn_n8.Location = new System.Drawing.Point(72, 183);
             this.Btn_n8.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_n8.Name = "Btn_n8";
             this.Btn_n8.Size = new System.Drawing.Size(59, 59);
@@ -141,7 +141,7 @@
             this.Btn_n7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Btn_n7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_n7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_n7.Location = new System.Drawing.Point(8, 313);
+            this.Btn_n7.Location = new System.Drawing.Point(8, 183);
             this.Btn_n7.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_n7.Name = "Btn_n7";
             this.Btn_n7.Size = new System.Drawing.Size(59, 59);
@@ -253,7 +253,7 @@
             this.Btn_n3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Btn_n3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_n3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_n3.Location = new System.Drawing.Point(136, 183);
+            this.Btn_n3.Location = new System.Drawing.Point(136, 313);
             this.Btn_n3.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_n3.Name = "Btn_n3";
             this.Btn_n3.Size = new System.Drawing.Size(59, 59);
@@ -267,7 +267,7 @@
             this.Btn_n1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Btn_n1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_n1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_n1.Location = new System.Drawing.Point(8, 183);
+            this.Btn_n1.Location = new System.Drawing.Point(8, 313);
             this.Btn_n1.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_n1.Name = "Btn_n1";
             this.Btn_n1.Size = new System.Drawing.Size(59, 59);
@@ -281,7 +281,7 @@
             this.Btn_n2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Btn_n2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_n2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_n2.Location = new System.Drawing.Point(72, 183);
+            this.Btn_n2.Location = new System.Drawing.Point(72, 313);
             this.Btn_n2.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_n2.Name = "Btn_n2";
             this.Btn_n2.Size = new System.Drawing.Size(59, 59);

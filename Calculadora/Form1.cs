@@ -91,7 +91,8 @@ namespace Calculadora
                     break;
             }
             Txt_Result.Text = result.ToString();
-            Txt_PreviousOp.Text = value.ToString();
+            value = result;
+           // Txt_PreviousOp.Text = value.ToString();
         }
 
         private void Btn_n1_Click(object sender, EventArgs e)
