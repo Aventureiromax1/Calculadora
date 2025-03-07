@@ -48,7 +48,7 @@
             this.Btn_n2 = new System.Windows.Forms.Button();
             this.Btn_Clear = new System.Windows.Forms.Button();
             this.Txt_PreviousOp = new System.Windows.Forms.Label();
-            this.InvertSignalBtn = new System.Windows.Forms.Button();
+            this.InvSigBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnSoma
@@ -317,19 +317,19 @@
             this.Txt_PreviousOp.TabIndex = 28;
             this.Txt_PreviousOp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // InvertSignalBtn
+            // InvSigBtn
             // 
-            this.InvertSignalBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.InvertSignalBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InvertSignalBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.InvertSignalBtn.Location = new System.Drawing.Point(136, 121);
-            this.InvertSignalBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.InvertSignalBtn.Name = "InvertSignalBtn";
-            this.InvertSignalBtn.Size = new System.Drawing.Size(59, 59);
-            this.InvertSignalBtn.TabIndex = 29;
-            this.InvertSignalBtn.Text = "-/+";
-            this.InvertSignalBtn.UseVisualStyleBackColor = false;
-            this.InvertSignalBtn.Click += new System.EventHandler(this.button1_Click);
+            this.InvSigBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.InvSigBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InvSigBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.InvSigBtn.Location = new System.Drawing.Point(136, 121);
+            this.InvSigBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.InvSigBtn.Name = "InvSigBtn";
+            this.InvSigBtn.Size = new System.Drawing.Size(59, 59);
+            this.InvSigBtn.TabIndex = 29;
+            this.InvSigBtn.Text = "-/+";
+            this.InvSigBtn.UseVisualStyleBackColor = false;
+            this.InvSigBtn.Click += new System.EventHandler(this.InvSigBtn_Click);
             // 
             // Calculadora
             // 
@@ -337,7 +337,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(269, 453);
-            this.Controls.Add(this.InvertSignalBtn);
+            this.Controls.Add(this.InvSigBtn);
             this.Controls.Add(this.Txt_PreviousOp);
             this.Controls.Add(this.Btn_Clear);
             this.Controls.Add(this.Btn_n3);
@@ -385,7 +385,7 @@
         private System.Windows.Forms.Button Btn_n2;
         private System.Windows.Forms.Button Btn_Clear;
         private System.Windows.Forms.Label Txt_PreviousOp;
-        private System.Windows.Forms.Button InvertSignalBtn;
+        private System.Windows.Forms.Button InvSigBtn;
     }
 }
 

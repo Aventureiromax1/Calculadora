@@ -16,14 +16,18 @@ namespace Calculadora
         public double result { get; set; }
 
         public double value { get; set; }
-        private operations selectedOperation { get; set; }
-
-        private enum operations
+        private double value1;
+        private double value2;
+        private double? infovalor = null;
+        private operations selectedOperations;
+        private string operation = "";
+        public enum operations
         {
-            add = '+',
-            sub = '-',
-            multiply = 'x',
-            division = '÷'
+            o,
+            add,
+            sub,
+            multiply,
+            division
         }
         public Calculadora()
         {
@@ -32,72 +36,105 @@ namespace Calculadora
         }
         void lockbutton()
         {
-            BtnEqual.Enabled = !(Txt_Result.Text == null || selectedOperation == operations.division && Txt_Result is null);
+            BtnEqual.Enabled = !(selectedOperations == operations.division && Txt_Result.Text == "0");
         }
-        /*private double resultOp()
+        private double resultOp()
         {
-            
-        }*/
+            if (value2 != infovalor && infovalor != null)
+            {
+                value2 = Convert.ToDouble(Txt_Result.Text);
+            }
+            else
+            {
+                value2 = infovalor.Value;
+            }
+            //double result = 0;
+            switch (selectedOperations)
+            {
+                case operations.add:
+                    result = value1 + value2;
+                    break;
+                case operations.sub:
+                    result = value1 - value2;
+                    break;
+                case operations.multiply:
+                    result = value1 * value2;
+                    break;
+                case operations.division:
+                    result = value1 / value2;
+                    break;
+            }
+            value1 = result;
+            return value1;
+        }
 
         private void BtnSoma_Click(object sender, EventArgs e)
         {
-            selectedOperation = operations.add;
-            value = Convert.ToDouble(Txt_Result.Text);
-            Txt_Result.Text += "+";
-            Txt_PreviousOp.Text += "+";
-            Txt_Result.Text = "";
+            if (!(selectedOperations == operations.add))
+            {
+                value1 = double.Parse(Txt_Result.Text);
+                Txt_Result.Text = "";
+                selectedOperations = operations.add;
+                operation = "+";
+                Txt_PreviousOp.Text = value1 + "+";
+                infovalor = null;
+            }
         }
 
         private void BtnMinus_Click(object sender, EventArgs e)
         {
-            selectedOperation = operations.sub;
-            value = Convert.ToDouble(Txt_Result.Text);
-            Txt_Result.Text += "-";
-            Txt_PreviousOp.Text += "-";
-            Txt_Result.Text = "";
+            if (!(selectedOperations == operations.sub))
+            {
+                value1 = double.Parse(Txt_Result.Text);
+                Txt_Result.Text = "";
+                selectedOperations = operations.sub;
+                operation = "-";
+                Txt_PreviousOp.Text = value1 + "-";
+                infovalor = null;
+            }
         }
 
         private void BtnMultiply_Click(object sender, EventArgs e)
         {
-            selectedOperation = operations.multiply;
-            value = Convert.ToDouble(Txt_Result.Text);
-            Txt_Result.Text += "×";
-            Txt_PreviousOp.Text += "×";
-            Txt_Result.Text = "";
+            if (!(selectedOperations == operations.multiply))
+            {
+                value1 = double.Parse(Txt_Result.Text);
+                Txt_Result.Text = "";
+                selectedOperations = operations.multiply;
+                operation = "x";
+                Txt_PreviousOp.Text = value1 + "x";
+                infovalor = null;
+            }
+
         }
 
         private void BtnDivision_Click(object sender, EventArgs e)
         {
-            selectedOperation = operations.division;
-            value = Convert.ToDouble(Txt_Result.Text);
-            Txt_Result.Text += "÷";
-            Txt_PreviousOp.Text += "÷";
-            Txt_Result.Text = "";
-            lockbutton();
+            if (!(selectedOperations == operations.division))
+            {
+                value1 = double.Parse(Txt_Result.Text);
+                Txt_Result.Text = "";
+                selectedOperations = operations.division;
+                operation = "÷";
+                Txt_PreviousOp.Text = value1 + "÷";
+                infovalor = null;
+                lockbutton();
+            }
         }
 
         private void BtnEqual_Click(object sender, EventArgs e)
         {
-            double result = 0;
-
-            switch (selectedOperation)
+            if (!(infovalor == null))
             {
-                case operations.add:
-                    result = value + Convert.ToDouble(Txt_Result.Text);
-                    break;
-                case operations.sub:
-                    result = value - Convert.ToDouble(Txt_Result.Text);
-                    break;
-                case operations.multiply:
-                    result = value * Convert.ToDouble(Txt_Result.Text);
-                    break;
-                case operations.division:
-                    result = value / Convert.ToDouble(Txt_Result.Text);
-                    break;
+                value2 = infovalor.Value;
             }
-            Txt_Result.Text = result.ToString();
-            value = result;
-           Txt_PreviousOp.Text = value.ToString();
+            else
+            {
+                infovalor = double.Parse(Txt_Result.Text);
+            }
+                resultOp();
+                Txt_Result.Text = Convert.ToString(result);
+                Txt_PreviousOp.Text = Convert.ToString(value1) + operation;
         }
 
         private void Btn_n1_Click(object sender, EventArgs e)
@@ -224,7 +261,7 @@ namespace Calculadora
         {
             if (!Txt_Result.Text.Contains(","))
             {
-                if (Txt_Result.Text == "0")
+                if (Txt_Result.Text == "0" || Txt_Result.Text == "")
                 {
                     Txt_Result.Text = "0,";
                 }
@@ -240,11 +277,18 @@ namespace Calculadora
             Txt_Result.Text = "";
             Txt_PreviousOp.Text = "";
             result = 0;
-            value = 0;
+            value1 = 0;
+            value2 = 0;
+            infovalor = null;
+            selectedOperations = operations.o;
         }
 
         private void Txt_Result_TextChanged(object sender, EventArgs e)
         {
+            if (Txt_Result.Text == "")
+            {
+                Txt_Result.Text = "0";
+            }
             lockbutton();
         }
 
@@ -252,8 +296,7 @@ namespace Calculadora
         {
             Txt_PreviousOp.Text += value.ToString();
         }
-
-        private void InvertSignalBtn(object sender, EventArgs e)
+        private void InvSigBtn_Click(object sender, EventArgs e)
         {
             if (Txt_Result.Text.Contains("-"))
             {
