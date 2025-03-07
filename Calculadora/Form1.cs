@@ -20,19 +20,24 @@ namespace Calculadora
 
         private enum operations
         {
-            add,
-            sub,
-            multiply,
-            division
+            add = '+',
+            sub = '-',
+            multiply = 'x',
+            division = '÷'
         }
         public Calculadora()
         {
             InitializeComponent();
+            Txt_Result.Text = "0";
         }
         void lockbutton()
         {
             BtnEqual.Enabled = !(Txt_Result.Text == null || selectedOperation == operations.division && Txt_Result is null);
         }
+        /*private double resultOp()
+        {
+            
+        }*/
 
         private void BtnSoma_Click(object sender, EventArgs e)
         {
@@ -92,64 +97,141 @@ namespace Calculadora
             }
             Txt_Result.Text = result.ToString();
             value = result;
-           // Txt_PreviousOp.Text = value.ToString();
+           Txt_PreviousOp.Text = value.ToString();
         }
 
         private void Btn_n1_Click(object sender, EventArgs e)
         {
-            Txt_Result.Text += "1";
+            if (Txt_Result.Text == "0")
+            {
+                Txt_Result.Text = "1";
+            }
+            else
+            {
+                Txt_Result.Text += "1";
+            }
         }
 
         private void Btn_n2_Click(object sender, EventArgs e)
         {
-            Txt_Result.Text += "2";
+            if (Txt_Result.Text == "0")
+            {
+                Txt_Result.Text = "2";
+            }
+            else
+            {
+                Txt_Result.Text += "2";
+            }
         }
 
         private void Btn_n3_Click(object sender, EventArgs e)
         {
-            Txt_Result.Text += "3";
+            if (Txt_Result.Text == "0")
+            {
+                Txt_Result.Text = "3";
+            }
+            else
+            {
+                Txt_Result.Text += "3";
+            }
         }
 
         private void Btn_n4_Click(object sender, EventArgs e)
         {
-            Txt_Result.Text += "4";
+            if (Txt_Result.Text == "0")
+            {
+                Txt_Result.Text = "4";
+            }
+            else
+            {
+                Txt_Result.Text += "4";
+            }
         }
 
         private void Btn_n5_Click(object sender, EventArgs e)
         {
-            Txt_Result.Text += "5";
+            if (Txt_Result.Text == "0")
+            {
+                Txt_Result.Text = "5";
+            }
+            else
+            {
+                Txt_Result.Text += "5";
+            }
         }
 
         private void Btn_n6_Click(object sender, EventArgs e)
         {
-            Txt_Result.Text += "6";
+            if (Txt_Result.Text == "0")
+            {
+                Txt_Result.Text = "6";
+            }
+            else
+            {
+                Txt_Result.Text += "6";
+            }
         }
 
         private void Btn_n7_Click(object sender, EventArgs e)
         {
-            Txt_Result.Text += "7";
+            if (Txt_Result.Text == "0")
+            {
+                Txt_Result.Text = "7";
+            }
+            else
+            {
+                Txt_Result.Text += "7";
+            }
         }
 
         private void Btn_n8_Click(object sender, EventArgs e)
         {
-            Txt_Result.Text += "8";
+            if (Txt_Result.Text == "0")
+            {
+                Txt_Result.Text = "8";
+            }
+            else
+            {
+                Txt_Result.Text += "8";
+            }
         }
 
         private void Btn_n9_Click(object sender, EventArgs e)
         {
-            Txt_Result.Text += "9";
+            if (Txt_Result.Text == "0")
+            {
+                Txt_Result.Text = "9";
+            }
+            else
+            {
+                Txt_Result.Text += "9";
+            }
         }
 
         private void Btn_n0_Click(object sender, EventArgs e)
         {
-            Txt_Result.Text += "0";
+            if (Txt_Result.Text == "0")
+            {
+                Txt_Result.Text = "0";
+            }
+            else
+            {
+                Txt_Result.Text += "0";
+            }
         }
 
         private void BtnRaise_Click(object sender, EventArgs e)
         {
             if (!Txt_Result.Text.Contains(","))
             {
-                Txt_Result.Text += ",";
+                if (Txt_Result.Text == "0")
+                {
+                    Txt_Result.Text = "0,";
+                }
+                else
+                {
+                    Txt_Result.Text += ",";
+                }
             }
         }
 
@@ -169,7 +251,18 @@ namespace Calculadora
         private void Txt_PreviousOp_TextChanged(object sender, EventArgs e)
         {
             Txt_PreviousOp.Text += value.ToString();
-            //Txt_PreviousOp.Text += operations;
+        }
+
+        private void InvertSignalBtn(object sender, EventArgs e)
+        {
+            if (Txt_Result.Text.Contains("-"))
+            {
+                Txt_Result.Text = Txt_Result.Text.Trim('-');
+            }
+            else
+            {
+                Txt_Result.Text = "-" + Txt_Result.Text;
+            }
         }
     }
 }

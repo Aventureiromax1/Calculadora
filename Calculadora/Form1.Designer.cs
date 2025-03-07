@@ -48,6 +48,7 @@
             this.Btn_n2 = new System.Windows.Forms.Button();
             this.Btn_Clear = new System.Windows.Forms.Button();
             this.Txt_PreviousOp = new System.Windows.Forms.Label();
+            this.InvertSignalBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnSoma
@@ -231,7 +232,7 @@
             this.Txt_Result.Name = "Txt_Result";
             this.Txt_Result.Size = new System.Drawing.Size(251, 54);
             this.Txt_Result.TabIndex = 16;
-            this.Txt_Result.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Txt_Result.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Txt_Result.TextChanged += new System.EventHandler(this.Txt_Result_TextChanged);
             // 
             // Btn_n6
@@ -308,13 +309,27 @@
             this.Txt_PreviousOp.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Txt_PreviousOp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Txt_PreviousOp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_PreviousOp.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Txt_PreviousOp.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Txt_PreviousOp.Location = new System.Drawing.Point(8, 9);
             this.Txt_PreviousOp.Margin = new System.Windows.Forms.Padding(20);
             this.Txt_PreviousOp.Name = "Txt_PreviousOp";
             this.Txt_PreviousOp.Size = new System.Drawing.Size(251, 54);
             this.Txt_PreviousOp.TabIndex = 28;
-            this.Txt_PreviousOp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Txt_PreviousOp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // InvertSignalBtn
+            // 
+            this.InvertSignalBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.InvertSignalBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InvertSignalBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.InvertSignalBtn.Location = new System.Drawing.Point(136, 121);
+            this.InvertSignalBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.InvertSignalBtn.Name = "InvertSignalBtn";
+            this.InvertSignalBtn.Size = new System.Drawing.Size(59, 59);
+            this.InvertSignalBtn.TabIndex = 29;
+            this.InvertSignalBtn.Text = "-/+";
+            this.InvertSignalBtn.UseVisualStyleBackColor = false;
+            this.InvertSignalBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // Calculadora
             // 
@@ -322,6 +337,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(269, 453);
+            this.Controls.Add(this.InvertSignalBtn);
             this.Controls.Add(this.Txt_PreviousOp);
             this.Controls.Add(this.Btn_Clear);
             this.Controls.Add(this.Btn_n3);
@@ -369,6 +385,7 @@
         private System.Windows.Forms.Button Btn_n2;
         private System.Windows.Forms.Button Btn_Clear;
         private System.Windows.Forms.Label Txt_PreviousOp;
+        private System.Windows.Forms.Button InvertSignalBtn;
     }
 }
 
