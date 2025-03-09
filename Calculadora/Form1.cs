@@ -130,8 +130,6 @@ namespace Calculadora
             else //se não ele armazena o valor do visor
             {
                 value2 = double.Parse(Txt_Result.Text);
-            }
-            {
                 infovalor = double.Parse(Txt_Result.Text);
             }
                 resultOp(); //realiza a operação
